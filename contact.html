@@ -1,0 +1,77 @@
+<DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-Type" content="text/html;/>
+<title>PriceTree Comparision</title>
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+<style>
+				body
+				{ font-family: 'Arial', sans-serif; font-size: 75%;}
+				div#msgbox
+				{ background: #CCE5AD; border-bottom: 2px solid #56B96B; color: #4a4a4a; width: 100%; height: 30px; position:absolute; top: 0; cursor: pointer; }
+				
+				div#msgbox #msg {line-height:30px; padding-left:10px; }
+				
+				form#commentForm {margin-top: 35px;}
+		
+		</style>
+		
+			
+
+
+
+</head>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("div#msgbox").hide();
+			$("#addComment").click(function() {
+				$.post('contact.php', {
+					name:$("#name").val(),
+					email:$("#email").val()
+				},
+				function(response) {
+					$("div#msgbox #msg").html("Comments Added Successfully");
+					$("div#msgbox").slideUp().slideDown("normal");
+					}
+					);
+				return false;
+			});
+				$("div#msgbox").click(function() {
+				$(this).slideUp("normal");
+				
+				})
+			});
+		
+		
+		
+		</script>
+		
+		
+		<body>
+			
+			<div id="msgbox"><span id="msg"> </span></div>
+			<form action="contact1.php" method="post" id="commentForm">
+				
+					Name: <input type="text" id="name" /><br />
+					Email: <input type="text" id="email" /><br />
+					<input type="submit" id="addComment" value="POST Comment" />
+					</form>
+		
+		
+		
+		
+		
+		</body>
+		
+		
+		</html>
+		
+		
+		
+		
+		
+		

@@ -1,0 +1,70 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  
+<title>Refrigerators</title></head> 
+<script type="text/javascript" language="javascript" src="jQueryUI/media/js/jquery.js"></script>
+<script type="text/javascript" language="javascript" src="jQueryUI/media/js/jquery.dataTables.js"></script>
+ <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.7.1.min.js"> </script> 
+
+<style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+</style>
+
+ 
+<body>
+<script>
+   var itemTemplate = '<tr><td class="store"><strong>{{storename}}</strong></td><td class="price">Rs. {{price}}</td><td class="uri"><a target="_blank" href="{{uri}}">Go to Store</a></td></tr>';
+   var collection = '';
+
+ function OnSuccess(data) {
+    // do something with the data
+    var element = '';
+    for (i = 0; i < data.count ; i++) {
+    element = itemTemplate.replace(/{{storename}}/g, data.data[i].Seller_Name);
+    element = element.replace(/{{price}}/g, data.data[i].Best_Price);
+    element = element.replace(/{{uri}}/g, data.data[i].Uri);
+    collection += element;    
+    }
+    $('#price-list').html(collection);
+    
+}
+$.ajax({
+    type: "GET",
+    url: "http://www.pricetree.com/dev/api.ashx?pricetreeId=122089&apikey=7770AD31-382F-4D32-8C36-3743C0271699",
+    dataType: "json",
+    success: OnSuccess
+});
+
+</script>
+<!-- Price Comparison API by Pricetree.com
+Written by @vikashrathee : https://twitter.com/vikashrathee -->
+
+	<h2>REFRIGERATORS</h2>
+
+	<h3 class="text-center"><a href="pricetree.html" class="btn btn-default">More Offers</a></h3>
+	
+<table class="table" style="width:60%" >
+    <thead>
+	
+        <tr class="info">
+            <th>Store Name</th>   <th>Price</th> &nbsp;   <th>URL</th>  
+        </tr>
+    </thead>
+    <tbody id="price-list">
+        <!-- Data will be appended here -->
+    </tbody>
+</table>
+
+
+</body>
+</html>
