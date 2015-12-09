@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ShopAround App</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/style.css"/>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+		
+		<style>
+		
+		
+		
+		
+		</style>
+	
+	</head>
+	<body>
+	<div class="navbar-static-top navbar-inverse" id="home">
+		<div class="container">
+		
+		<br />
+		<div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">DEALS/PROMOTIONS
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="jsonExample.html">LAPTOPS</a></li>
+    <li><a href="index1.php">MOBILE PHONES</a></li>
+    <li><a href="ajax.html">FRIDGES</a></li>
+  </ul>
+</div>
+		
+		
+		
+		
+		
+		
+	
+		<button class="navbar-toggle" data-toggle="collapse" data-target=".navHeaderCollapse">
+		Menu
+		</button>
+		<div class="collapse navbar-collapse navHeaderCollapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="#">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#contact">Sign Up</a></li>
+				<li><a href="#offers">Offers </a></li>
+			
+			
+			</ul>
+		</div>
+	</div>
+	</div>
+		<div class="jumbotron">
+		<div class="container">
+			<h1 class="text-center">ShopAround App</h1>
+			<p class="text-center">Enjoy Our Amazing Offers and Promotion</p>
+			<p class="text-center" >Shop Around the Globe</p>
+			<p class="text-center"><a href="http://github.com/jenniferwangui" target="_blank" class="btn btn-primary btn-lg">Show me the code</a></p>
+		</div>
+	   </div>
+	<div class="alt1" id="offers">   
+	<div class="container">
+		<div class="row padding">
+			<div class="col-md-4">
+				<h2 class="text-center">Great Offers</h2>
+				<p class="text-justify">Avail yourself for the great offers and promotion today</p>
+				<p class="text-center"><a href="jsonExample.html" class="btn btn-default">Shop now</a></p>
+			</div>
+			<div class="col-md-4">
+				<h2 class="text-center">Great Offers</h2>
+				<p class="text-justify">Avail yourself for the great offers and promotion today</p>
+				<p class="text-center"><a href="index1.php" class="btn btn-default">Shop now</a></p>
+			</div>
+			<div class="col-md-4">
+				<h2 class="text-center">Great Offers</h2>
+				<p class="text-justify">Avail yourself for the great offers and promotion today</p>
+				<p class="text-center"><a href="ajax.html" class="btn btn-default">Shop now</a></p>
+			</div>
+			
+			</div>
+		</div>
+		</div>
+		
+		<div class="alt2" id="about">
+		<div class="container">
+			<div class="row padding">
+			<div class="col-md-4">
+			<img src="images/TSC.jpg" class="img-circle img-responsive" alt="circular image"/>
+			<p>Compare the prices</p>
+		</div>
+			<div class="col-md-4">
+			<img src="images/salepic.jpg" class="img-circle img-responsive" alt="circular image"/>
+			<p>Compare the prices</p>
+		</div>
+		<div class="col-md-4">
+			<img src="images/sale3.jpg" class="img-circle img-responsive" alt="circular image"/>
+			<p>Compare the prices</p>
+		</div>
+</div>
+	</div>
+		</div>
+		
+	
+	<div class="container padding" id="contact" id="msg">
+		<form action="signup.php" method="post">
+			<div class="form-group">
+			<h3>Sign Up</h3>
+			<h4>Sign up now to receive promotional content</h4>
+			<label for="first_name">First Name:</label>
+				<input type="text" class="form-control" id="first_name" name="first_name"/>	
+			</div>
+			<div class="form-group">
+			<label for="last_name">Last Name</label>
+				<input type="text" class="form-control" id="last_name" name="last_name" />
+			</div>
+			<div class="form-group">
+			
+			
+			<label for="email">Email</label> 
+				<input type="email" class="form-control" id="email" name="email" placeholder="example@example.com"/>
+
+			</div>
+			<div class="form-group">
+			<input type="checkbox" /> Send me promotional content
+			</div>
+			<button type="submit" id="addComment" class="btn btn-default">Submit</button>
+		</form>
+	</div>
+		
+		<div class="alt3">
+			<div class="container">
+			<footer>&copy; Jennifer Mwangi<br /><a href="#home">Back to top</a></footer>
+			
+		</div>
+		
+		</div>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script>
+	$(function() {
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 1000);
+        return false;
+      }
+    }
+  });
+});
+</script>
+	
+	</body>
+	
+	</html>
